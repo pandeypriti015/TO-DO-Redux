@@ -16,19 +16,20 @@ class TodoList extends Component {
             return (
                 <div key={index}>
                     {item.title}
+                    <button onClick={()=>this.deleteItem(index)}>Delete</button>
                 </div>
             );
         });
     }
-    
+
     addItem() {
         const newList = [...this.props.items, { title: this.state.text }];
         this.props.createTodo(newList);
     }
 
-    deleteItem() {
-        const newList =''
-        this.props.createTodo(newList);
+    deleteItem(index) {
+        const deleteItem = this.props.items.filter((i,j)=>j!==index)
+        this.props.createTodo(deleteItem);
     }
 
     render() {
@@ -36,11 +37,7 @@ class TodoList extends Component {
             <div>
                 <textarea value={this.state.text} onChange={(event) => this.setState({text:event.target.value})}></textarea>
                 <button onClick={()=>this.addItem()}>Add </button>
-                <button onClick={()=>this.props.createTodo([])}>
-                    Reset
-                </button>
-
-                <button onClick={()=>this.deleteItem()}>DELETE</button>
+                <button onClick={()=>this.props.createTodo([])}>Reset</button>
                 {this.renderList()}
             </div>
         )
