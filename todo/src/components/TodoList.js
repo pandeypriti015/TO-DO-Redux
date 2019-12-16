@@ -5,7 +5,8 @@ class TodoList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: ''
+            text: '',
+            isAuth:false
         };
         this.renderList = this.renderList.bind(this);
         this.addItem = this.addItem.bind(this);
@@ -35,14 +36,17 @@ class TodoList extends Component {
     render() {
         return (
             <div>
-                <textarea value={this.state.text} onChange={(event) => this.setState({text:event.target.value})}></textarea>
+                {!this.props.isAuth?(<h1>Please login...!!!!</h1>):(
+                <div> <textarea value={this.state.text} onChange={(event) => this.setState({text:event.target.value})}></textarea>
                 <button onClick={()=>this.addItem()}>Add </button>
                 <button onClick={()=>this.props.createTodo([])}>Reset</button>
-                {this.renderList()}
+                {this.renderList()}</div>)}
+               
             </div>
         )
     }
 }
+
 const mapStateToProps = (state) => {
     return {
         items: state.todo.items
