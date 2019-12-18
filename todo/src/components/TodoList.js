@@ -40,8 +40,7 @@ class TodoList extends Component {
                 <div> <textarea value={this.state.text} onChange={(event) => this.setState({text:event.target.value})}></textarea>
                 <button onClick={()=>this.addItem()}>Add </button>
                 <button onClick={()=>this.props.createTodo([])}>Reset</button>
-                {this.renderList()}</div>)}
-               
+                {this.renderList()}</div>)}               
             </div>
         )
     }
@@ -55,4 +54,3 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
     createTodo
 })(TodoList);
-
