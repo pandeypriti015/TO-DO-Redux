@@ -11,6 +11,7 @@ Installation:
 Clone this Repo:
 
 https://github.com/pandeypriti015/TO_DO_Redux.git
+
 Get inside the todolist folder:
 
 cd todolist
