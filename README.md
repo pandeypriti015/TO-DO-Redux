@@ -20,7 +20,7 @@ Start the application:
 npm start
 Using redux I have mainted my state in another folder. To check that implementation: Get into to-do-list folder:
 
-cd to-do-list
+cd todo
 Start the application:
 
 npm start
