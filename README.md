@@ -1,4 +1,4 @@
-# TO_DO_Redux
+# TO-DO-Redux
 
 This is a fully functional TO DO list.
 
